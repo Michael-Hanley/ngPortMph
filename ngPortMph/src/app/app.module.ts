@@ -1,3 +1,4 @@
+import { DataService } from './services/data.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -6,6 +7,7 @@ import 'hammerjs';
 import { MaterialModule } from '@angular/material';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { HttpModule, JsonpModule } from '@angular/http';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -21,12 +23,14 @@ const appRoutes: Routes = [
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
+    HttpModule,
+    JsonpModule,
     RouterModule.forRoot(appRoutes)
   ],
   exports: [
     MaterialModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
