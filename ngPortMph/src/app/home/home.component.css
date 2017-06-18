@@ -1,4 +1,10 @@
-.coin_card {
-  width: auto;
-  text-align: center;
+
+.logo {
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    right: 55px;
+}
+.coin_name {
+    position: absolute;
 }
