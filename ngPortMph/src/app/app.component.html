@@ -1,18 +1,22 @@
 <!--The whole content below can be removed with the new code.-->
-<button md-mini-fab class="example-fab" (click)="sidenav.toggle()">
+<button md-button (click)="sidenav.toggle()">
   <md-icon>menu</md-icon>
 </button>
 <br>
 <br>
-<md-sidenav-container class="main-sideBar">
-  <md-sidenav #sidenav mode="side" opened="true">
-    <div class="example-scrolling-content">
-      <md-list>
-        <md-list-item> Coins </md-list-item>
-        <md-list-item> Crypto News </md-list-item>
-        <md-list-item> Mining News </md-list-item>
-      </md-list>
+<div id="parent">
+  <md-sidenav-container class="main-sideBar">
+    <md-sidenav id="narrow" #sidenav mode="side" opened="true">
+        <md-list>
+          <md-list-item> Coins </md-list-item>
+          <md-list-item> Crypto News </md-list-item>
+          <md-list-item> Mining News </md-list-item>
+        </md-list>
+    </md-sidenav>
+    <div id="wide">
     </div>
-  </md-sidenav>
-  <router-outlet></router-outlet>
-</md-sidenav-container>
+  </md-sidenav-container>
+  <div id="outer">
+   <div id="inner"><router-outlet></router-outlet></div>
+  </div>
+</div>
