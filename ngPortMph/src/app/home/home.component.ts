@@ -1,13 +1,14 @@
 import { DataService } from './../services/data.service';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-coins:any[];
+coins:Array<any>;
 errorMessage: string;
   constructor(private dataService:DataService) {}
   getCoins(){

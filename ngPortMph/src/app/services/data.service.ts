@@ -6,7 +6,7 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class DataService {
-  private coinMarketCapURL = 'https://api.coinmarketcap.com/v1/ticker/';
+  private coinMarketCapURL = 'https://www.cryptocompare.com/api/data/coinlist/';
   constructor( private http: Http ) { }
   getCoins(): Observable<any> {
     return this.http.get(this.coinMarketCapURL)
@@ -15,7 +15,7 @@ export class DataService {
   }
   private extractData(res: Response) {
     let body = res.json();
-    return body || { };
+    return body.Data || { };
   }
   private handleError (error: Response | any) {
     // In a real world app, you might use a remote logging infrastructure

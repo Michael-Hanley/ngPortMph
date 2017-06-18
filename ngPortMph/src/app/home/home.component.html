@@ -1,11 +1,13 @@
-<div *ngFor="let coin of coins">
+<div *ngFor="let coin of coins | keyValueFilter">
   <md-card class="coin_card">
   <md-card-header>
     <div md-card-avatar class="example-header-image"></div>
-    <md-card-title>{{ coin.name }}</md-card-title>
-    <md-card-subtitle>{{ coin.price_usd }}</md-card-subtitle>
+    <md-card-title>{{ coin.key }}</md-card-title>
+    <md-card-subtitle>{{ coin.value.CoinName }}</md-card-subtitle>
   </md-card-header>
+  <img md-card-image src="https://www.cryptocompare.com{{coin.value.ImageUrl}}">
   <md-card-content>
+
   </md-card-content>
   <md-card-actions>
     <button md-button>LIKE</button>

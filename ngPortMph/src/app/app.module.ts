@@ -8,6 +8,7 @@ import { MaterialModule } from '@angular/material';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { HttpModule, JsonpModule } from '@angular/http';
+import { keyValueFilterPipe } from './pipes/keyValueFilterPipe.pipe';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -17,7 +18,8 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    keyValueFilterPipe
   ],
   imports: [
     BrowserModule,
