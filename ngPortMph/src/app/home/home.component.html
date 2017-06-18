@@ -1,3 +1,15 @@
 <div *ngFor="let coin of coins">
-  <div>{{ coin.name }}</div>
+  <md-card class="coin_card">
+  <md-card-header>
+    <div md-card-avatar class="example-header-image"></div>
+    <md-card-title>{{ coin.name }}</md-card-title>
+    <md-card-subtitle>{{ coin.price_usd }}</md-card-subtitle>
+  </md-card-header>
+  <md-card-content>
+  </md-card-content>
+  <md-card-actions>
+    <button md-button>LIKE</button>
+    <button md-button>SHARE</button>
+  </md-card-actions>
+</md-card>
 </div>
